@@ -64,7 +64,7 @@ select {
   font-size: 1rem;
 }
 
-button#generar {
+.boton {
   align-self: flex-start;
   background-color: var(--color-primario);
   color: white;
@@ -76,11 +76,11 @@ button#generar {
   transition: background-color 0.2s ease;
 }
 
-button#generar:hover {
+.boton:hover {
   background-color: var(--color-primario-hover);
 }
 
-button#generar:focus-visible,
+.boton:focus-visible,
 select:focus-visible {
   outline: 3px solid var(--color-primario);
   outline-offset: 2px;

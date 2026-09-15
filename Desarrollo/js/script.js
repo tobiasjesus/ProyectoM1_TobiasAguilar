@@ -34,6 +34,9 @@ const selectFormato = document.querySelector("#formato");
 const botonGenerar = document.querySelector("#generar");
 const contenedorPaleta = document.querySelector("#paleta");
 const feedback = document.querySelector("#feedback");
+const botonGuardar = document.querySelector("#guardar");
+const botonCargar = document.querySelector("#cargar");
+const CLAVE_STORAGE = "ultimaPaleta";
 
 let paletaActual = [];
 let feedbackTimeoutId = null;
@@ -119,3 +122,21 @@ function copiarAlPortapapeles(hex) {
     .catch(() => mostrarFeedback("No se pudo copiar el color"));
 }
 
+function guardarPaleta() {
+  localStorage.setItem(CLAVE_STORAGE, JSON.stringify(paletaActual));
+  mostrarFeedback("Paleta guardada");
+}
+
+function cargarPaleta() {
+  const datos = localStorage.getItem(CLAVE_STORAGE);
+  if (!datos) {
+    mostrarFeedback("No hay paleta guardada");
+    return;
+  }
+  paletaActual = JSON.parse(datos);
+  renderizarPaleta(paletaActual, selectFormato.value);
+  mostrarFeedback("Paleta cargada");
+}
+
+botonGuardar.addEventListener("click", guardarPaleta);
+botonCargar.addEventListener("click", cargarPaleta);
