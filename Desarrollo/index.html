@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Generador de paletas de colores interactivo para diseñadores y desarrolladores web.">
+  <title>Generador de Paletas Interactivo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Generador de Paletas Interactivo</h1>
+    </header>
+    <main>
+        <section aria-label="Controles de la paleta">
+            <fieldset>
+            <legend>Opciones de la paleta</legend>
+
+            <label for="tamano">Cantidad de colores</label>
+            <select id="tamano" name="tamano">
+                <option value="6">6 colores</option>
+                <option value="8">8 colores</option>
+                <option value="9">9 colores</option>
+            </select>
+            <label for="formato">Formato del código</label>
+            <select id="formato" name="formato">
+                <option value="hex">HEX</option>
+                <option value="hsl">HSL</option>
+            </select>
+            </fieldset>
+            <button type="button" id="generar">Generar paleta</button>
+        </section>
+        <section aria-label="Paleta generada">
+            <div id="paleta"></div>
+        </section>
+        <div id="feedback" role="status" aria-live="polite"></div>
+    </main>
+</body>
+</html>
