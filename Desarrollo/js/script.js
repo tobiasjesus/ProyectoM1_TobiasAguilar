@@ -1,7 +1,7 @@
 function colorAleatorioHSL() {
   const h = Math.floor(Math.random() * 360);
-  const s = Math.floor(Math.random() * 30) + 60;
-  const l = Math.floor(Math.random() * 30) + 40;
+  const s = Math.floor(Math.random() * 101);
+  const l = Math.floor(Math.random() * 101);
   return { h, s, l };
 }
 
