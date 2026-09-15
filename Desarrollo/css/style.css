@@ -63,3 +63,69 @@ select {
   border: 1px solid #ccc;
   font-size: 1rem;
 }
+
+button#generar {
+  align-self: flex-start;
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radio-borde);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button#generar:hover {
+  background-color: var(--color-primario-hover);
+}
+
+button#generar:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--color-primario);
+  outline-offset: 2px;
+}
+
+#paleta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.color-card {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radio-borde);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.color-codigo {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #1a1a1a;
+  font-family: monospace;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+#feedback {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  background-color: var(--color-texto);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radio-borde);
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+#feedback.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
